@@ -1,15 +1,15 @@
 :root{
-  --bg:#7d88a0;
-  --card:#ffffff;
-  --border:#e7eef4;
-  --text:#1f2937;
-  --muted:#60758a;
-  --accent:#10b981;   
-  --accent-2:#f59e0b;
-  --badge:#ebf7f4;
-  --chip:#f1f5f9;
+  --teal-300:#63bbcf;
+  --teal-500:#219fbd;
+  --orange-300:#faa74b;
+  --orange-500:#f88902;
+  --yellow-300:#fdcd52;
+  --yellow-500:#fabf27;
+  --surface-100:#f3f5f9;
+  --white:#ffffff;
+
   --radius:16px;
-  --shadow:0 10px 24px rgba(21, 35, 55, .08);
+  --shadow:0 10px 24px rgba(0,0,0,.08); 
 }
 
 *{box-sizing:border-box}
@@ -17,18 +17,18 @@ html,body{height:100%}
 html{font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif}
 body{
   margin:0;
-  color:var(--text);
+  color:#000; 
   background:
-    radial-gradient(900px 400px at 0% 0%, rgba(16,185,129,.06), transparent 60%),
-    radial-gradient(900px 400px at 100% 0%, rgba(245,158,11,.06), transparent 60%),
-    var(--bg);
+    radial-gradient(900px 400px at 0% 0%, rgba(33,159,189,.10), transparent 60%),
+    radial-gradient(900px 400px at 100% 0%, rgba(250,167,75,.10), transparent 60%),
+    var(--surface-100);
 }
 
 header.topbar{
   position:sticky; top:0; z-index:10;
-  background:rgba(255,255,255,.8);
+  background:rgba(255,255,255,.92); 
   backdrop-filter: blur(10px);
-  border-bottom:1px solid var(--border);
+  border-bottom:1px solid var(--surface-100);
 }
 .topbar-inner{
   max-width:1200px; margin:auto;
@@ -42,14 +42,15 @@ h1{
   letter-spacing:.2px;
   line-height:1.1;
   font-size:clamp(28px,3vw,40px);
+  color:#000;
 }
 h1 small{
   display:inline-block;
   margin-bottom:6px;
   padding:6px 12px;
-  background:var(--badge);
-  color:var(--accent);
-  border:1px solid #d5efe6;
+  background:var(--surface-100);
+  color:var(--teal-500);
+  border:1px solid var(--teal-300);
   border-radius:999px;
   font-weight:700;
   text-transform:uppercase;
@@ -62,10 +63,10 @@ h1 small{
 .authors p{
   margin:0;
   padding:6px 12px;
-  background:var(--chip);
-  border:1px solid var(--border);
+  background:var(--surface-100);
+  border:1px solid var(--surface-100);
   border-radius:999px;
-  color:#334155;
+  color:#000;
   font-size:.92rem;
 }
 
@@ -78,11 +79,11 @@ main.dashboard{
 }
 
 .card{
-  background:var(--card);
-  border:1px solid var(--border);
+  background:var(--white);
+  border:1px solid var(--surface-100);
   border-radius:var(--radius);
   box-shadow:var(--shadow);
-  padding:22px 22px;
+  padding:22px;
 }
 
 .span-12{grid-column:1 / -1}
@@ -96,46 +97,57 @@ main.dashboard{
 .card h2, .card h3{
   margin:0 0 14px 0;
   padding-bottom:10px;
-  border-bottom:1px dashed var(--border);
+  border-bottom:1px dashed var(--surface-100);
+  color:#000;
 }
-.card h2{
-  color:#0f766e;
-  font-size:clamp(20px,2.2vw,26px);
-}
-.card h3{
-  color:#0ea5e9;
-  font-size:clamp(18px,2vw,22px);
-}
+.card h2{ font-size:clamp(20px,2.2vw,26px) }
+.card h3{ font-size:clamp(18px,2vw,22px) }
 
 figure{
   margin:12px 0 16px;
   padding:12px;
-  background:#fbfdff;
-  border:1px solid var(--border);
+  background:var(--white);
+  border:1px solid var(--surface-100);
   border-radius:12px;
 }
 figure img{
   width:100%; height:auto; display:block; border-radius:8px;
+  max-height: 520px; object-fit: contain;
 }
 figcaption{
   margin-top:8px;
   font-size:.92rem;
-  color:var(--muted);
-  border-top:1px solid var(--border);
+  color:rgba(0,0,0,.7); 
+  border-top:1px solid var(--surface-100);
   padding-top:8px;
 }
 
-.card p{ margin:10px 0; color:#3b4a5a }
+.card p{ margin:10px 0; color:#000 }
 ul{ margin:8px 0 0; padding-left:1.1rem }
 li{ margin:6px 0 }
 li > ul{ margin-top:6px }
 
-a{ color:#0ea5e9; text-underline-offset:3px }
-a:hover{ color:#0c87c7 }
+a{ color:var(--teal-500); text-underline-offset:3px }
+a:hover{ color:var(--teal-300) }
 
-.stack{display:grid; gap:14px}
+.card.for     { border-top:4px solid var(--teal-500) }
+.card.against { border-top:4px solid var(--orange-500) }
 
-.card.for   { border-top:4px solid var(--accent) }
-.card.against{ border-top:4px solid var(--accent-2) }
+.pill{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--surface-100);
+  background:var(--surface-100);
+  font-weight:700;
+  color:#000;
+}
 
-.card figure img{ max-height: 520px; object-fit: contain }
+.hr-teal{
+  height:4px; width:100%; background:linear-gradient(90deg,var(--teal-300),var(--teal-500));
+  border-radius:999px; margin:8px 0 2px;
+}
+.hr-warm{
+  height:4px; width:100%; background:linear-gradient(90deg,var(--orange-300),var(--orange-500),var(--yellow-300),var(--yellow-500));
+  border-radius:999px; margin:8px 0 2px;
+}
