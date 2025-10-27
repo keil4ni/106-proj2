@@ -6,14 +6,12 @@ This repository contains a single-page HTML report that states our proposition, 
 
 ### Contents
 
-.
-├── index.html        # Final report page
-├── styles.css        # Styling for the report
+repo-root/
+├── index.html      # Final report page
+├── styles.css      # Styling for the report
 └── images/
-    ├── plot1.png     # "FOR the proposition" visualization
-    └── plot2.png     # "AGAINST the proposition" visualization
-
----
+    ├── plot1.png   # "FOR the proposition" visualization
+    └── plot2.png   # "AGAINST the proposition" visualization
 
 ### Dataset
 
