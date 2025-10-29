@@ -7,4 +7,4 @@ This repository contains a single-page HTML report that states our proposition, 
 ### Dataset
 
 **Abortion Data by U.S. State — Guttmacher Institute**  
-A state-level dataset covering abortion rates, providers, and seekers. The Guttmacher Institute is a research and policy organization focused on advancing sexual and reproductive health and rights.
+A state-level dataset covering abortion rates, providers, and seekers. The Guttmacher Institute is a research and policy organization focused on advancing sexual and reproductive health and rights. 
